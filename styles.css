@@ -1,0 +1,84 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+h1 {
+  margin-left: 20px;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+#search-input {
+  width: 300px;
+  height: 35px;
+  margin: 20px 20px 0 auto;
+  padding: 5px;
+}
+
+form {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.inputs {
+  display: block;
+  width: 100%;
+  margin: 5px 0 20px 0;
+  padding: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  width: 100%;
+  margin: 0 auto;
+  padding: 5px;
+  display: block;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: lightseagreen;
+}
+
+button:focus {
+  outline: none;
+}
+
+textarea {
+  height: 100px;
+}
+
+#idea-container {
+  background-color: lightgrey;
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  min-height: 50vh;
+}
+
+.card {
+  width: 50%;
+  background-color: white;
+  border: 1px solid black;
+  margin: 10px auto;
+  padding: 10px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>IdeaBox Vanilla</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>IdeaBox Vanilla</h1>
+      <input type="text" id="search-input" placeholder="Search Cards"/>
+    </header>
+    <form>
+      <label>
+        <h3>Title</h3>
+        <input type="text" class="inputs" id="title-input" />
+      </label>
+      <label>
+        <h3>Body</h3>
+        <textarea class="inputs" id="body-input" ></textarea>
+      </label>
+      <button type="submit">Add Idea</button>
+    </form>
+    <div id="idea-container"></div>
+    <script src="Idea.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
