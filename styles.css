@@ -43,7 +43,9 @@ form {
   padding: 5px;
 }
 
-input:focus {
+input:focus,
+select:focus,
+button:focus {
   outline: none;
 }
 
@@ -59,12 +61,19 @@ button:hover {
   background-color: lightseagreen;
 }
 
-button:focus {
-  outline: none;
-}
-
 textarea {
   height: 100px;
+}
+
+#quality-label {
+  text-align: center;
+  width: 50%;
+  display: block;
+  margin: 40px auto 20px auto;
+}
+
+select {
+  width: 200px;
 }
 
 #idea-container {
@@ -81,4 +90,18 @@ textarea {
   border: 1px solid black;
   margin: 10px auto;
   padding: 10px;
+}
+
+.vote {
+  display: inline;
+  width: 100px;
+}
+
+.quality-text {
+  display: inline;
+}
+
+.delete-card {
+  margin: 0 0 0 auto;
+  width: 25px;
 }

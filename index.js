@@ -1,5 +1,3 @@
-// filter by quality
-
 let ideasArray = [];
 const ideaContainer = document.getElementById('idea-container');
 
@@ -28,16 +26,20 @@ const deleteIdea = (id) => {
   document.getElementById(id).remove();
 }
 
+const removeCardsFromDom = () => {
+  Array.from(document.querySelectorAll('.card')).forEach(card => card.remove());
+}
+
 const createCardOnDom = (idea) => {
   const html = `
     <div class="card" id=${idea.id}>
-      <button class="delete-card">Delete Card</button>
+      <button class="delete-card">X</button>
       <h3 class="search-text title">${idea.title}</h3>
       <p class="search-text body">${idea.body}</p>
       <div>
         <button class="vote up">Upvote</button>
         <button class="vote down">Downvote</button>
-        <p>Quality: <span>${idea.quality}</span></p>
+        <p class="quality-text">Quality: <span>${idea.quality}</span></p>
       </div>
     </div>
   `;
@@ -52,11 +54,9 @@ const updateQuality = (id, direction) => {
 }
 
 const searchCards = (searchText) => {
-  document.querySelectorAll('.card').forEach(item => {
-    const title = item.firstElementChild.nextElementSibling.innerText;
-    const body = item.firstElementChild.nextElementSibling.nextElementSibling.innerText;
-    item.parentElement.style.display = (title.includes(searchText) || body.includes(searchText)) ? 'block' : 'none';
-  });
+  removeCardsFromDom();
+  const ideasToShow = ideasArray.filter(idea => idea.title.includes(searchText) || idea.body.includes(searchText));
+  ideasToShow.length > 0 && ideasToShow.forEach(idea => createCardOnDom(idea));
 }
 
 const updateIdea = (event) => {
@@ -70,6 +70,12 @@ const updateIdea = (event) => {
 const editText = (target) => {
   target.contentEditable = true;
   target.addEventListener('blur', updateIdea);
+}
+
+const filterByQuality = (event) => {
+  removeCardsFromDom();
+  const ideasToShow = event.target.value === 'All' ? ideasArray : ideasArray.filter(idea => idea.quality === event.target.value);
+  ideasToShow.length > 0 && ideasToShow.forEach(idea => createCardOnDom(idea));
 }
 
 window.addEventListener('load', getCardsFromStorage);
@@ -93,4 +99,5 @@ ideaContainer.addEventListener('dblclick', function(event) {
   const target = event.target.classList;
   target.contains('search-text') && editText(event.target);
 });
+document.getElementById('quality-filter').addEventListener('change', filterByQuality)
 
