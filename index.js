@@ -40,7 +40,7 @@ const createCardOnDom = (idea) => {
       <div class="card-footer">
         <button class="vote up"></button>
         <button class="vote down"></button>
-        <p class="quality-text">Quality: <span>${qualityText}</span></p>
+        <p class="quality-text">Rating: <span>${qualityText}</span></p>
       </div>
     </div>
   `;

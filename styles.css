@@ -49,6 +49,7 @@ h1 {
 }
 
 .title {
+  height: 54px;
   color: hotpink;
   font-size: 24px;
   margin-top: 0;
@@ -149,6 +150,9 @@ textarea {
 
 select {
   width: 200px;
+  background-color: beige;
+  border: 2px solid lightseagreen;
+  box-shadow: 2px 2px 8px black;
 }
 
 #idea-container {
@@ -175,10 +179,7 @@ select {
 
 .body {
   font-size: 16px;
-}
-
-.card-footer {
-  
+  height: 125px;
 }
 
 .vote {
