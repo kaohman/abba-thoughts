@@ -31,15 +31,16 @@ const removeCardsFromDom = () => {
 }
 
 const createCardOnDom = (idea) => {
+  const qualityText = qualityTextOnDom(idea.quality);
   const html = `
     <div class="card" id=${idea.id}>
-      <button class="delete-card">X</button>
+      <button class="delete-card"></button>
       <h3 class="search-text title">${idea.title}</h3>
       <p class="search-text body">${idea.body}</p>
-      <div>
-        <button class="vote up">Upvote</button>
-        <button class="vote down">Downvote</button>
-        <p class="quality-text">Quality: <span>${idea.quality}</span></p>
+      <div class="card-footer">
+        <button class="vote up"></button>
+        <button class="vote down"></button>
+        <p class="quality-text">Quality: <span>${qualityText}</span></p>
       </div>
     </div>
   `;
@@ -49,13 +50,25 @@ const createCardOnDom = (idea) => {
 const updateQuality = (id, direction) => {
   const idea = ideasArray.find(idea => idea.id === parseInt(id));
   const newQuality = idea.changeQuality(direction);
+  const textToShow = qualityTextOnDom(newQuality);
   idea.saveToStorage(ideasArray);
-  document.getElementById(id).lastElementChild.lastElementChild.firstElementChild.innerText = newQuality;
+  document.getElementById(id).lastElementChild.lastElementChild.firstElementChild.innerText = textToShow;
+}
+
+qualityTextOnDom = (quality) => {
+  if (quality === 'Swill') {
+    return 'Don\'t go wasting your emotion'
+  } else if (quality === 'Plausible') {
+    return 'Take a chance on me'
+  } else {
+    return 'Lay all your love on me'
+  }
 }
 
 const searchCards = (searchText) => {
+  const text = searchText.toLowerCase();
   removeCardsFromDom();
-  const ideasToShow = ideasArray.filter(idea => idea.title.includes(searchText) || idea.body.includes(searchText));
+  const ideasToShow = ideasArray.filter(idea => idea.title.toLowerCase().includes(text) || idea.body.toLowerCase().includes(text));
   ideasToShow.length > 0 && ideasToShow.forEach(idea => createCardOnDom(idea));
 }
 

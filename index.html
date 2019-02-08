@@ -3,33 +3,41 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>IdeaBox Vanilla</title>
+    <title>ABBAbox</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./normalize.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./styles.css">
   </head>
   <body>
     <header>
-      <h1>IdeaBox Vanilla</h1>
-      <input type="text" id="search-input" placeholder="Search Cards"/>
+      <div id="title">
+        <h1><span id="abba-text">ABBA</span>thoughts</h1>
+        <p id="subtitle">A website for storing your favorite songs by ABBA.</p>
+      </div>
+      <div id="search-div">
+        <audio controls loop>
+          <source src="./mamma-mia.mp3" type="audio/mp3">
+        </audio>
+        <input type="text" id="search-input" placeholder="Search Songs"/>
+      </div>
     </header>
     <form>
       <label>
-        <h3>Title</h3>
+        <h3 class="form-labels">Song Title</h3>
         <input type="text" class="inputs" id="title-input" />
       </label>
       <label>
-        <h3>Body</h3>
+        <h3 class="form-labels">Review</h3>
         <textarea class="inputs" id="body-input" ></textarea>
       </label>
-      <button type="submit">Add Idea</button>
+      <button type="submit" id="submit-button">Add Song</button>
     </form>
     <label id="quality-label">Filter By Quality: 
       <select id="quality-filter">
         <option value="All">All</option>
-        <option value="Swill">Swill</option>
-        <option value="Plausible">Plausible</option>
-        <option value="Genius">Genius</option>
+        <option value="Swill">Don't go wasting your emotion</option>
+        <option value="Plausible">Take a chance on me</option>
+        <option value="Genius">Lay all your love on me</option>
       </select>
     </label>
     <div id="idea-container"></div>

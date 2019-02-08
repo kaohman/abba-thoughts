@@ -8,27 +8,84 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: url('./abba.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+audio {
+  height: 30px;
+  color: white;
+  display: block;
 }
 
 h1 {
+  font-size: 60px;
+  color: lightseagreen;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 8px black;
+}
+
+#subtitle {
+  margin-top: 10px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 2px 8px black;
+}
+
+#abba-text {
+  color: hotpink;
+}
+
+#title {
   margin-left: 20px;
 }
 
+.title {
+  color: hotpink;
+  font-size: 24px;
+  margin-top: 0;
+  font-weight: 800;
+}
+
 h3 {
+  font-size: 20px;
+  font-weight: 400;
   margin-bottom: 0;
 }
 
+.form-labels {
+  color: hotpink;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px black;
+}
+
+#search-div {
+  margin: 20px 20px 0 auto;
+}
+
 #search-input {
+  border-radius: 10px;
+  caret-color: hotpink;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 8px black;
+  border: 1px solid lightseagreen;
   width: 300px;
   height: 35px;
-  margin: 20px 20px 0 auto;
   padding: 5px;
+  margin-top: 10px;
+}
+
+#search-input::placeholder {
+  color: white;
 }
 
 form {
@@ -37,19 +94,34 @@ form {
 }
 
 .inputs {
+  border-radius: 10px;
+  font-size: 18px;
+  caret-color: hotpink;
+  color: white;
   display: block;
   width: 100%;
   margin: 5px 0 20px 0;
   padding: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid lightseagreen;
+  box-shadow: 2px 2px 8px black;
 }
 
 input:focus,
+textarea:focus,
 select:focus,
-button:focus {
+button:focus,
+audio:focus {
   outline: none;
 }
 
-button {
+#submit-button {
+  color: white;
+  background-color: lightseagreen;
+  border: none;
+  box-shadow: 2px 2px 8px black;
+  height: 35px;
+  text-transform: uppercase;
   width: 100%;
   margin: 0 auto;
   padding: 5px;
@@ -57,8 +129,8 @@ button {
   border-radius: 10px;
 }
 
-button:hover {
-  background-color: lightseagreen;
+#submit-button:hover {
+  background-color: hotpink;
 }
 
 textarea {
@@ -66,6 +138,9 @@ textarea {
 }
 
 #quality-label {
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 8px black;
   text-align: center;
   width: 50%;
   display: block;
@@ -77,19 +152,33 @@ select {
 }
 
 #idea-container {
-  background-color: lightgrey;
+  width: 90%;
+  background-color: #1b161d;
   margin-top: 20px;
   padding: 20px;
   width: 100%;
   min-height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  grid-gap: 20px;
+  justify-content: space-around;
 }
 
 .card {
-  width: 50%;
-  background-color: white;
-  border: 1px solid black;
-  margin: 10px auto;
-  padding: 10px;
+  width: 300px;
+  height: 400px;
+  background-color: beige;
+  border: 3px solid lightseagreen;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.body {
+  font-size: 16px;
+}
+
+.card-footer {
+  
 }
 
 .vote {
@@ -98,10 +187,53 @@ select {
 }
 
 .quality-text {
-  display: inline;
+  font-size: 18px;
+  color: hotpink;
+  display: block;
 }
 
 .delete-card {
-  margin: 0 0 0 auto;
-  width: 25px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  background: url('./cancel-green.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  left: 220px;
+}
+
+.delete-card:hover {
+  background-size: cover;
+  background-image: url('./cancel-pink.png');
+}
+
+.up {
+  height: 35px;
+  width: 35px;
+  border: none;
+  background: url('./thumbs-up-green.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+}
+
+.up:hover {
+  background-size: cover;
+  background-image: url('./thumbs-up-pink.png');
+}
+
+.down {
+  height: 35px;
+  width: 35px;
+  border: none;
+  background: url('./thumb-down-green.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 5px;
+}
+
+.down:hover {
+  background-size: cover;
+  background-image: url('./thumb-down-pink.png');
 }
