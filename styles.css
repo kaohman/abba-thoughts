@@ -45,10 +45,11 @@ h1 {
 }
 
 #title {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 
 .title {
+  text-shadow: 1px 1px 3px black;
   height: 54px;
   color: hotpink;
   font-size: 24px;
@@ -69,7 +70,7 @@ h3 {
 }
 
 #search-div {
-  margin: 20px 20px 0 auto;
+  margin: 20px 40px 0 auto;
 }
 
 #search-input {
@@ -78,7 +79,7 @@ h3 {
   color: white;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 2px 2px 8px black;
-  border: 1px solid lightseagreen;
+  border: 2px solid lightseagreen;
   width: 300px;
   height: 35px;
   padding: 5px;
@@ -104,7 +105,7 @@ form {
   margin: 5px 0 20px 0;
   padding: 5px;
   background-color: rgba(0, 0, 0, 0.7);
-  border: 1px solid lightseagreen;
+  border: 2px solid lightseagreen;
   box-shadow: 2px 2px 8px black;
 }
 
@@ -149,9 +150,10 @@ textarea {
 }
 
 select {
+  color: white;
   width: 200px;
-  background-color: beige;
-  border: 2px solid lightseagreen;
+  background-color: #49454A;
+  border: none;
   box-shadow: 2px 2px 8px black;
 }
 
@@ -171,13 +173,14 @@ select {
 .card {
   width: 300px;
   height: 400px;
-  background-color: beige;
-  border: 3px solid lightseagreen;
+  background-color: #49454A;
+  box-shadow: 2px 2px 8px black;
   padding: 20px;
   border-radius: 10px;
 }
 
 .body {
+  color: white;
   font-size: 16px;
   height: 125px;
 }
@@ -201,7 +204,7 @@ select {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  left: 220px;
+  left: 225px;
 }
 
 .delete-card:hover {
